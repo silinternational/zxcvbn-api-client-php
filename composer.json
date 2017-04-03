@@ -7,7 +7,7 @@
   "require": {
     "php": ">=5.4.0",
     "guzzlehttp/guzzle": "~5.0",
-    "guzzlehttp/guzzle-services": "dev-master",
+    "guzzlehttp/guzzle-services": "0.6.0",
     "guzzlehttp/retry-subscriber": "^2.0.2",
     "roave/security-advisories": "dev-master"
   },
