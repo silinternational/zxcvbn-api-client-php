@@ -4,7 +4,6 @@ namespace Zxcvbn;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Command\Guzzle\GuzzleClient;
 use GuzzleHttp\Command\Guzzle\Description;
-use GuzzleHttp\Subscriber\Retry\RetrySubscriber;
 
 /**
  * Zxcvbn API client implemented with Guzzle.
@@ -27,6 +26,9 @@ class BaseClient extends GuzzleClient
         parent::__construct(
             $this->getHttpClientFromConfig($config),
             $this->getDescriptionFromConfig($config),
+            null,
+            null,
+            null,
             $config
         );
     }
