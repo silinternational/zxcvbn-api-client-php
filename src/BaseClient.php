@@ -44,15 +44,6 @@ class BaseClient extends GuzzleClient
             : [];
         $client = new HttpClient($clientOptions);
 
-        // Attach request retry logic.
-        $client->getEmitter()->attach(new RetrySubscriber([
-            'max' => $config['max_retries'],
-            'filter' => RetrySubscriber::createChainFilter([
-                RetrySubscriber::createStatusFilter(),
-                RetrySubscriber::createCurlFilter(),
-            ]),
-        ]));
-
         return $client;
     }
 
